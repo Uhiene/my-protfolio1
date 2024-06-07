@@ -1,3 +1,4 @@
+"use client"
 import React from 'react'
 import Layout from '../components/Layout/Layout'
 import ResumeCard from '../components/Resume/ResumeCard'
@@ -6,12 +7,14 @@ import SkillCard from '../components/Resume/SkillCard';
 import { FaCss3Alt, FaGithub, FaHtml5, FaNodeJs, FaReact } from 'react-icons/fa';
 import { IoLogoJavascript } from 'react-icons/io5';
 import { SiNextdotjs, SiTailwindcss, SiTypescript } from 'react-icons/si';
+import Link from 'next/link';
+
 
 const Resume = () => {
   const professionalSkills = [
     { name: 'Frontend Developer' },
     { name: 'Project Manager' },
-    { name: 'Content Writer'},
+    { name: 'Content Writer' },
     { name: 'Tutor' },
     { name: 'Youtuber', },
   ];
@@ -20,7 +23,7 @@ const Resume = () => {
     { name: 'HTML', icon: <FaHtml5 /> },
     { name: 'CSS', icon: <FaCss3Alt /> },
     { name: 'TailwindCss', icon: <SiTailwindcss /> },
-    { name: 'Git & Github', icon: <FaGithub />},
+    { name: 'Git & Github', icon: <FaGithub /> },
     { name: 'JavaScript', icon: <IoLogoJavascript /> },
     { name: 'React Js', icon: <FaReact /> },
     { name: 'Next Js', icon: <SiNextdotjs /> },
@@ -28,15 +31,20 @@ const Resume = () => {
     { name: 'Typescript', icon: <SiTypescript /> },
   ];
 
+ 
   return (
     <Layout>
-      <div className='bg-[#F8F9FA] p-20 flex flex-col items-center gap-16'>
-        <h1 className='text-5xl font-bold text-pink-500'>Resume</h1>
+      <div className='bg-[#F8F9FA] p-10 lg:p-20 flex flex-col items-center gap-16'>
+        <h1 className='text-5xl font-bold gradient-text'>Resume</h1>
 
-        <div className="w-4/5">
+        <div className="w-full lg:w-4/5">
           <div className='flex justify-between mb-8'>
             <h1 className='text-3xl font-bold text-pink-500'> Experience</h1>
-            <button className='bg-pink-500 text-white p-4 rounded-lg flex gap-2 items-center' ><TbDownload /> Download Resume</button>
+            <Link href="https://www.dropbox.com/scl/fi/vjm0zvi4ivl1epl1izmg4/Princess-Uhiene-CV.pdf?rlkey=up6p2v215ys7t2arzqpfxlx26&st=yk6dka5w&dl=0" target='_blank'>
+            <button className="bg-pink-500 text-white p-4 rounded-lg flex gap-2 items-center">
+              <TbDownload /> Download Resume
+            </button>
+            </Link>
           </div>
           <ResumeCard
             dateRange="2022 - 2023"
@@ -52,7 +60,7 @@ const Resume = () => {
           </ResumeCard>
         </div>
 
-        <div className="w-4/5">
+        <div className="w-full lg:w-4/5">
           <ResumeCard
             dateRange="2022 - Present"
             jobTitle="Frontend Developer"
@@ -77,7 +85,7 @@ const Resume = () => {
           </ResumeCard>
         </div>
 
-        <div className="w-4/5">
+        <div className="w-full lg:w-4/5">
           <ResumeCard
             dateRange="2023 - 2023"
             jobTitle="React Developer"
@@ -100,7 +108,7 @@ const Resume = () => {
           </ResumeCard>
         </div>
 
-        <div className="w-4/5">
+        <div className="w-full lg:w-4/5">
           <div className='flex justify-between mb-8'>
             <h1 className='text-3xl font-bold text-pink-500'> Education</h1>
           </div>
@@ -118,12 +126,12 @@ const Resume = () => {
           </ResumeCard>
         </div>
 
-        <div className='w-4/5'>
-        <SkillCard title="Professional Skills" skills={professionalSkills} />
+        <div className='w-full lg:w-4/5'>
+          <SkillCard title="Professional Skills" skills={professionalSkills} />
         </div>
 
-        <div className='w-4/5'>
-        <SkillCard title="Frontend Skills" skills={frontendSkills} />
+        <div className='w-full lg:w-4/5'>
+          <SkillCard title="Frontend Skills" skills={frontendSkills} />
         </div>
 
       </div>

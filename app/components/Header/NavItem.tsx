@@ -11,7 +11,7 @@ interface NavItemProps {
 const NavItem: React.FC<NavItemProps> = ({ text, href, active = false }) => {
   return (
     <Link href={href} passHref>
-      <li className={`nav__item style-none ${active? 'active' : ''}`}>{text}</li>
+      <p className={`nav__item  text-slate-500 font-medium mb-2 lg:mb-0 ${active? 'active' : 'text-pink-500'}`}>{text}</p>
     </Link>
   );
 };
